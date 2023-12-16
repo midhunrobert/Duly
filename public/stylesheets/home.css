@@ -1,0 +1,113 @@
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #7e40f6 !important;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(126, 64, 246, 1),
+    rgb(233, 238, 247)
+  ) !important;
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(126, 64, 246, 1),
+    rgba(80, 139, 252, 1)
+  ) !important;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2) !important;
+  border-radius: 2em !important;
+  backdrop-filter: blur(25px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.05) !important;
+  /* background-clip: padding-box !important; */
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03) !important;
+}
+
+/* styles.css */
+.custom-row {
+  padding-bottom: 4px;
+  padding-top: 4px;
+  margin-bottom: 4px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.custom-row-inner {
+  text-align: center;
+}
+
+.custom-span {
+  margin: 0 auto;
+}
+
+
+
+.icon {
+  color: white; /* or your desired color */
+  margin-right: 5px;
+  cursor: pointer;
+}
+.task-title{
+  margin-left: 200px;
+}
+
+/* Additional CSS for icon visibility on hover */
+.edit-delete-icons {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-row:hover {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+}
+
+.custom-row:hover .edit-delete-icons {
+  opacity: 1;
+}
+
+
+
+/* CSS */
+.button-35 {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 10px;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-35:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.big-card {
+  width: 700px;
+  height: 300px;
+}
+
+.hidden {
+  display: none;
+}

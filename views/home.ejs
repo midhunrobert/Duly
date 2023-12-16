@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO DO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Add the link for your chosen icon library -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/stylesheets/home.css">
+  
+</head>
+
+<body>
+  
+  <section class="vh-100 gradient-custom-2">
+    <!-- Render flash messages -->
+
+
+    
+    <div class="container py-5 h-100">
+      <div style="text-align: end;">
+        <!-- Logout icon -->
+        <a href="/logout" class="btn btn-outline-white">
+          <i class="material-icons">logout</i> 
+        </a>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+
+          <div class="card mask-custom">
+            <div class="card-body p-4 text-white">
+
+              <div class="text-center pt-3 pb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                     alt="Check" width="60">
+
+                <h2 class="my-4">Task List</h2>
+              </div>
+              <div style="display: none;" id="addTaskFormContainer"  class="hidden row pb-4 pt-4 mb-4 custom-row bg-dark-custom d-flex align-items-center mx-auto col-10">
+                <!-- Container for task title and icons -->
+                <div class="col-12 custom-row-inner">
+                  <!-- Task title (centered with margin) -->
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!-- Add Task form -->
+                    <form id="addTaskForm" action="/todos" method="POST" class="d-flex">
+                      <!-- Set the background color of the input field to transparent -->
+                      <input type="text" name="title" placeholder="Add a new task" class="form-control mr-2" style="background-color: transparent; color: white;" required>
+                      <!-- Icons for Add Task -->
+                      <span class="d-flex edit-delete-icons">
+                        <!-- Use the appropriate class names for your chosen icon library -->
+                        <button type="submit" class="btn btn-primary" style="margin-left: 100px; color: transparent;"><i class="material-icons icon">add</i></button>
+                      </span>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              
+
+              <!-- Iterate through todos -->
+              <% for (let t of todos) { %>
+                <div class="row pb-4 pt-4 mb-4 custom-row bg-dark-custom d-flex align-items-center mx-auto col-10">
+                  <!-- Container for task title and icons -->
+                  <div class="col-12 custom-row-inner">
+                    <!-- Task title (centered with margin) -->
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="mx-auto">
+                        <%= t.title %>
+                      </span>
+                      <!-- Icons (initially hidden) -->
+                      <span class="d-flex edit-delete-icons">
+                        <!-- Use the appropriate class names for your chosen icon library -->
+                        <!-- <a href="/todos/<%=t._id  %>/edit"><i class="material-icons icon">edit</i></a> -->
+                        <form id="deleteForm" action="/todos/<%= t._id %>?_method=DELETE" method="POST">
+                          <i class="material-icons icon" onclick="submitForm()">delete</i>
+                      </form>
+                                          </span>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    
+  
+      function submitForm() {
+        document.getElementById("deleteForm").submit();
+      }
+      
+
+  </script>
+  
+  
+  
+  
+  
+</body>
+</html>

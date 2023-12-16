@@ -1,0 +1,23 @@
+# Node.js dependencies
+node_modules/
+
+# Compiled binary addons (Node-gyp)
+/build/
+
+# Dependency directories
+/client/node_modules/
+/server/node_modules/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# User-specific files
+.DS_Store
+Thumbs.db
