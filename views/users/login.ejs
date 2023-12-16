@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
       <link rel="stylesheet" href="/public/stylesheets/form.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -11,10 +12,8 @@
       <div class="center">
          <div class="container">
             <!-- Render flash messages -->
-            
-
             <div class="text">
-               Login Form
+               Login
             </div>
             <form action="/login" method="POST">
                <div class="data">
@@ -28,6 +27,9 @@
                <div class="btn">
                   <div class="inner"></div>
                   <button type="submit">login</button>
+               </div>
+               <div class="signup-link">
+                  Not a member? <a href="/register">SignUp now</a>
                </div>
             </form>
          </div>

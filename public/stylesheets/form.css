@@ -147,26 +147,14 @@ form .signup-link a:hover {
 }
 
 
-/* Add this in your existing CSS or create a new CSS file */
+/* Your existing styles */
 
-@media only screen and (max-width: 600px) {
-  /* Adjust styles for small screens */
-  body {
-     margin: 0;
-     padding: 0;
-  }
-
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
   .container {
-     width: 100%;
-     padding: 20px;
+     width: 80%; /* Adjust the width as needed */
   }
 
-  .data label,
-  .data input {
-     width: 100%;
-  }
-
-  .btn {
-     width: 100%;
-  }
+  /* Add more styles as needed for smaller screens */
 }
+
