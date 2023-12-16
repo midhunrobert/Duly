@@ -11,6 +11,7 @@ const userRoutes = require('./routes/user')
 const todoRoutes = require('./routes/todo')
 const session = require('express-session')
 const flash = require('connect-flash')
+const MongoDBStore = require('connect-mongodb-session')(session);
 require('dotenv').config()
 const dbUrl = process.env.DB_URL;
 
@@ -29,11 +30,16 @@ app.use(methodOverride('_method'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const store = new MongoDBStore({
+    uri: dbUrl,
+    collection: 'sessions'
+  });
 const sessionConfig = {
     name: 'session',
     secret: 'thisshouldbeabettersecret!',
     resave: false,
     saveUninitialized: true,
+    store: store,
     cookie: {
         httpOnly: true,
         // secure: true,
